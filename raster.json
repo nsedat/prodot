@@ -1,0 +1,17 @@
+{"raster":
+	[
+	{"name": "Raster 63 Winkel 0", "dx": 0.13, "dy": 0.195},
+	{"name": "Raster 63 Winkel 2", "dx": 0.08667, "dy": 0.2925},
+	{"name": "Raster 63 Winkel 3", "dx": 0.13, "dy": 0.2925},
+	{"name": "Raster 63 Winkel 4", "dx": 0.08667, "dy": 0.14625},
+	{"name": "Raster 68 Winkel 0", "dx": 0.12, "dy": 0.18},
+	{"name": "Raster 68 Winkel 2", "dx": 0.08, "dy": 0.27},
+	{"name": "Raster 68 Winkel 3", "dx": 0.12, "dy": 0.27},
+	{"name": "Raster 68 Winkel 4", "dx": 0.08, "dy": 0.135},
+	{"name": "Raster 70 Winkel 0", "dx": 0.115, "dy": 0.17217},
+	{"name": "Raster 70 Winkel 2", "dx": 0.07667, "dy": 0.25825},
+	{"name": "Raster 70 Winkel 3", "dx": 0.115, "dy": 0.25825},
+	{"name": "Raster 70 Winkel 4", "dx": 0.07667, "dy": 0.12913}
+	]
+,"result": "success"
+}

@@ -1,0 +1,211 @@
+/* 
+========================
+  GRIDINATOR CSS v0.4.1
+  http://gridinator.com/
+  
+  GRIDINATOR CSS is a very basic framework to create
+  grid-based layouts. The content of this file is 
+  provided as-is, without support.
+  
+  If you would like to contact GRIDINATOR to suggest
+  improvements, to ask for help or to file a bug report, 
+  please feel free to email: gridinator@steff.me
+  
+  Your grid settings:
+  	columns: 12
+  	column width: 88px
+  	column margin: 18px
+  	container margin: 13px
+    
+=========================
+*/
+* { /* quick reset */
+	margin: 0;	
+}
+
+body { 
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+
+.wrapper {
+	margin: 0 auto; /* This centers the grid. Remove this line to place the grid on the left of the page. */
+	text-align: left;
+/*	width: 1280px;*/
+	width: 1366px;
+}
+
+.inner-wrapper {
+	/*background: url(gridinator.png) repeat-y 0 0;*/ /* The file gridinator.png is a grid background; delete this line to remove it. If you did not generate a background image, you can still do so by going to http://gridinator.com/ and entering the details found at the top of this CSS file. You will then be given a grid image to match your original grid.  */
+	clear: both;
+	display: inline;/* IE double margin fix. Feel free to move this to your IE specific stylesheets. */
+	float: left;
+	padding: 0 13px 0 13px;
+	position: relative;
+	width: 1254px;
+}
+
+
+
+
+.container {
+	clear: both;
+	float: left;
+	margin: 0;
+	width: 100%;	
+}
+.one-col, .two-col, .three-col, .four-col, .five-col, .six-col, .seven-col, .eight-col, .nine-col, .ten-col, .eleven-col, .twelve-col, .full-col {
+	clear: none;
+	display: inline;/* IE double margin fix. Feel free to move this to your IE specific stylesheets. */
+	float: left;
+	margin: 0 18px 0 0;
+	padding: 0;
+	position: relative;
+	background: #9fcdf6; /* Delete this line to remove the blue colour on columns. */
+}
+.one-col {
+	width: 88px;
+}
+
+.two-col {
+	width: 194px;
+}
+
+.three-col {
+	width: 300px;
+}
+
+.four-col {
+	width: 406px;
+}
+
+.five-col {
+	width: 512px;
+}
+
+.six-col {
+	width: 618px;
+}
+
+.seven-col {
+	width: 724px;
+}
+
+.eight-col {
+	width: 830px;
+}
+
+.nine-col {
+	width: 936px;
+}
+
+.ten-col {
+	width: 1042px;
+}
+
+.eleven-col {
+	width: 1148px;
+}
+
+.twelve-col {
+	width: 1254px;
+	margin-right: 0;
+}
+
+.prefix-one {
+	margin-left: 106px;
+}
+
+.prefix-two {
+	margin-left: 212px;
+}
+
+.prefix-three {
+	margin-left: 318px;
+}
+
+.prefix-four {
+	margin-left: 424px;
+}
+
+.prefix-five {
+	margin-left: 530px;
+}
+
+.prefix-six {
+	margin-left: 636px;
+}
+
+.prefix-seven {
+	margin-left: 742px;
+}
+
+.prefix-eight {
+	margin-left: 848px;
+}
+
+.prefix-nine {
+	margin-left: 954px;
+}
+
+.prefix-ten {
+	margin-left: 1060px;
+}
+
+.prefix-eleven {
+	margin-left: 1166px;
+}
+
+.suffix-one {
+	margin-right: 124px;
+}
+
+.suffix-two {
+	margin-right: 230px;
+}
+
+.suffix-three {
+	margin-right: 336px;
+}
+
+.suffix-four {
+	margin-right: 442px;
+}
+
+.suffix-five {
+	margin-right: 548px;
+}
+
+.suffix-six {
+	margin-right: 654px;
+}
+
+.suffix-seven {
+	margin-right: 760px;
+}
+
+.suffix-eight {
+	margin-right: 866px;
+}
+
+.suffix-nine {
+	margin-right: 972px;
+}
+
+.suffix-ten {
+	margin-right: 1078px;
+}
+
+.suffix-eleven {
+	margin-right: 1184px;
+}
+
+.clear { /* Useful generic clearing class. */
+	clear: both;
+}
+.last-col {
+	margin-right: 0;
+}

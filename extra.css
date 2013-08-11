@@ -1,0 +1,496 @@
+body {
+	font: 12px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+
+	max-height: 840px;
+}
+
+h1 {
+	font-size: xx-large;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.3em;
+}
+
+.box {
+	padding: 10px;
+}
+
+body .block {
+	height: 70px;
+	background-color: #222222;
+}
+
+h1 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.box h2 {
+	font-size: 1em;
+	background-color: #880000;
+	color: #ffffff;
+	padding: 5px;
+	margin: -10px -10px 10px;
+	text-transform: uppercase;
+}
+
+#header {
+	background-color: #666;
+	color: #fff;
+	padding: 10px 0 0 0;
+}
+
+.one-col, .two-col, .three-col, .four-col, .five-col, .six-col, .seven-col, .eight-col, .nine-col, .ten-col, .eleven-col, .twelve-col, .thirteen-col, .fourteen-col, .fifteen-col, .sixteen-col {
+	/*background-color: #ccd232;*/
+	background-color: transparent;
+/*	color: #7f7f7f;*/
+	display: inline;
+	/*margin-bottom: 10px;*/
+}
+
+.wrapper {
+	height: 800px;
+}
+
+.twelve-col {
+	/*background-color: #fff;*/
+}
+
+.four-col .two-col {
+	/*background-color: #cce1c8;*/
+}
+
+.two-col .one-col {
+	/*background-color: #cce1c8;*/
+}
+
+.three-col {
+	/*background-color: #800000;*/
+}
+
+.navigation {
+	background-color: #333333;
+	list-style-type: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+}
+
+.navigation li {
+	float: left;
+}
+
+.navigation a {
+	background-color: #333;
+	display: block;
+	padding: 10px 20px;
+	color: #fff;
+	text-decoration: none;
+}
+
+.navigation a.selected, .navigation a.selected:hover {
+	background-color: #ddd;
+	color: #000;
+}
+
+.navigation a:hover {
+	background-color: #000;
+	text-decoration: none;
+}
+
+
+.formular hr {
+/*	clear: both;*/
+	/*visibility: hidden;*/
+}
+.aktuell {
+/*	font-size: 1.5em;
+	background-color: #dddddd;
+*/
+	color: #ff0000;
+}
+
+.alertify {
+	width: 1080px;
+	left: 50%;
+	margin-left: -540px;
+}
+
+/* DATATABLES */
+
+table.display tr.odd.type0 {
+	background-color: #ddd;
+}
+
+table.display tr.even.type0 {
+	background-color: #eee;
+}
+
+table.display tr.odd.type1 {
+	background-color: #ddffdd;
+}
+
+table.display tr.even.type1 {
+	background-color: #eeffee;
+}
+
+table.display tr.odd.type2 {
+	background-color: #ddddff;
+}
+
+table.display tr.even.type2 {
+	background-color: #eeeeff;
+}
+
+table.display tr.odd.type3 {
+	background-color: #ffdddd;
+}
+
+table.display tr.even.type3 {
+	background-color: #ffeeee;
+}
+
+table.display tr.odd.type4 {
+	background-color: #ff2f3b;
+}
+
+table.display tr.even.type4 {
+	background-color: #bc2f3b;
+}
+
+
+tr.odd {
+	background-color: #E2E4FF;
+}
+
+tr.even {
+	background-color: white;
+}
+
+/*
+ * Sorting classes for columns
+ */
+/* For the standard odd/even */
+tr.odd td.sorting_1 {
+	background-color: #D3D6FF;
+}
+
+tr.odd td.sorting_2 {
+	background-color: #DADCFF;
+}
+
+tr.odd td.sorting_3 {
+	background-color: #E0E2FF;
+}
+
+tr.even td.sorting_1 {
+	background-color: #EAEBFF;
+}
+
+tr.even td.sorting_2 {
+	background-color: #F2F3FF;
+}
+
+tr.even td.sorting_3 {
+	background-color: #F9F9FF;
+}
+
+
+table.display tr.even.row_selected td {
+	background-color: #B0BED9;
+}
+
+table.display tr.odd.row_selected td {
+	background-color: #9FAFD1;
+}
+
+
+
+
+/* For the Conditional-CSS grading rows */
+/*
+ 	Colour calculations (based off the main row colours)
+  Level 1:
+		dd > c4
+		ee > d5
+	Level 2:
+	  dd > d1
+	  ee > e2
+ */
+
+tr.odd.type0 td.sorting_1 {
+	background-color: #c4c4c4;
+}
+
+tr.odd.type0 td.sorting_2 {
+	background-color: #d1d1d1;
+}
+
+tr.odd.type0 td.sorting_3 {
+	background-color: #d1d1d1;
+}
+
+tr.even.type0 td.sorting_1 {
+	background-color: #d5d5d5;
+}
+
+tr.even.type0 td.sorting_2 {
+	background-color: #e2e2e2;
+}
+
+tr.even.type0 td.sorting_3 {
+	background-color: #e2e2e2;
+}
+
+tr.odd.type1 td.sorting_1 {
+	background-color: #c4ffc4;
+}
+
+tr.odd.type1 td.sorting_2 {
+	background-color: #d1ffd1;
+}
+
+tr.odd.type1 td.sorting_3 {
+	background-color: #d1ffd1;
+}
+
+tr.even.type1 td.sorting_1 {
+	background-color: #d5ffd5;
+}
+
+tr.even.type1 td.sorting_2 {
+	background-color: #e2ffe2;
+}
+
+tr.even.type1 td.sorting_3 {
+	background-color: #e2ffe2;
+}
+
+tr.odd.type2 td.sorting_1 {
+	background-color: #c4c4ff;
+}
+
+tr.odd.type2 td.sorting_2 {
+	background-color: #d1d1ff;
+}
+
+tr.odd.type2 td.sorting_3 {
+	background-color: #d1d1ff;
+}
+
+tr.even.type2 td.sorting_1 {
+	background-color: #d5d5ff;
+}
+
+tr.even.type2 td.sorting_2 {
+	background-color: #e2e2ff;
+}
+
+tr.even.type2 td.sorting_3 {
+	background-color: #e2e2ff;
+}
+
+tr.odd.type3 td.sorting_1 {
+	background-color: #ffc4c4;
+}
+
+tr.odd.type3 td.sorting_2 {
+	background-color: #ffd1d1;
+}
+
+tr.odd.type3 td.sorting_3 {
+	background-color: #ffd1d1;
+}
+
+tr.even.type3 td.sorting_1 {
+	background-color: #ffd5d5;
+}
+
+tr.even.type3 td.sorting_2 {
+	background-color: #ffe2e2;
+}
+
+tr.even.type3 td.sorting_3 {
+	background-color: #ffe2e2;
+}
+
+tr.odd.type4 td.sorting_1 {
+	background-color: #cb1500;
+}
+
+tr.odd.type4 td.sorting_2 {
+	background-color: #d34d17;
+}
+
+tr.odd.type4 td.sorting_3 {
+	background-color: #d34d17;
+}
+
+tr.even.type4 td.sorting_1 {
+	background-color: #cb1500;
+}
+
+tr.even.type4 td.sorting_2 {
+	background-color: #d34d17;
+}
+
+tr.even.type4 td.sorting_3 {
+	background-color: #d34d17;
+}
+/* TODO: same for tablejobs : status */
+.dataTables_empty {
+	text-align: center;
+}
+.dataTables_processing {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 1px;
+	height: 1px;
+	margin-left: 0px;
+	margin-top: 0px;
+	padding: 0px;
+	border: 0px solid #fff;
+	text-align: center;
+	color: #bc2f3b;
+	font-size: 1em;
+	background-color: white;
+}
+
+
+.mirror0 {
+	display: block;
+	-moz-transform: scale(1,1);
+	-webkit-transform: scale(1,1);
+	-o-transform: scale(1,1);
+	-ms-transform: scale(1,1);
+	-sand-transform: scale(1,1);
+	transform: scale(1,1);
+}
+.mirror1 {	/* X */
+	display: block;
+	-moz-transform: scale(-1,1);
+	-webkit-transform: scale(-1,1);
+	-o-transform: scale(-1,1);
+	-ms-transform: scale(-1,1);
+	-sand-transform: scale(-1,1);
+	-transform: scale(-1,1);
+}
+.mirror2 {	/* Y */
+	display: block;
+	-moz-transform: scale(1,-1);
+	-webkit-transform: scale(1,-1);
+	-o-transform: scale(1,-1);
+	-ms-transform: scale(1,-1);
+	-sand-transform: scale(1,-1);
+	transform: scale(1,-1);
+}
+.rotate0 {
+	display: block;
+	-moz-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-sand-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+.rotate90{
+	display: block;
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-sand-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.rotate180{
+	display: block;
+	-moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-sand-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.rotate270{
+	display: block;
+	-moz-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-sand-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+
+
+.imgcontainer {
+  display: table;
+/*  width: 100%;
+  height: 100%;*/
+	height: 225px;
+	width: 225px;
+}
+#positionabout {
+	display: table-cell;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+.imgposition {
+	display: table-cell;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+/* plupoad */
+.plupload_container {
+_height: 300px;
+min-height: 250px;
+position: relative;
+}
+.plupload_header_content {
+height: 56px;
+padding: 0 20px 0 20px;
+position: relative;
+}
+.plupload_logo {
+width: 0px;
+height: 0px;
+background: none;
+position: absolute;
+top: 0px;
+left: 0px;
+}
+.plupload_droptext {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: transparent;
+text-align: center;
+vertical-align: middle;
+border: 0;
+line-height: 120px;
+display: none;
+}
+
+/*.plupload_filelist {
+color: black;
+}
+*/
+.ui-progressbar .ui-progressbar-value {
+	margin: -1px;
+	height: 100%;
+	background: #e3e3e3;
+}

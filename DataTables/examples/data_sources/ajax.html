@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/media/images/favicon.ico" />
+		<title>DataTables example</title>
+       <link rel="stylesheet" href="../../media/css/demo_table.css" charset="utf-8" />
+
+<!--		<script type="text/javascript" language="javascript" src="../../media/js/jquery.js"></script> -->
+        <script src="/prindot/jquery-1.9.1.js" type="text/javascript"></script>
+		<script type="text/javascript" language="javascript" src="../../media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				var oTable = $('#xdtexample').dataTable( {
+					"bProcessing": true,
+					"sAjaxSource": '../ajax/sources/arrays.txt',
+				"xfnRowCallback": function ( nTr, asData, iDrawIndex, iDataIndex ) {
+					alert('clicked : ' + iDrawIndex + " : " + idataIndex);
+					return nTr;
+				}				
+				} );
+				/* Add events */
+				$('#xdtexample tbody').on('click.DTTT_Select', 'tr', function() {
+					var sTitle;
+					var nTds = $('td', this);
+					var sBrowser = $(nTds[1]).text();
+					var sGrade = $(nTds[4]).text();
+
+					if (sGrade == "A")
+						sTitle = sBrowser + ' will provide a first class (A) level of CSS support.';
+					else if (sGrade == "C")
+						sTitle = sBrowser + ' will provide a core (C) level of CSS support.';
+					else if (sGrade == "X")
+						sTitle = sBrowser + ' does not provide CSS support or has a broken implementation. Block CSS.';
+					else
+						sTitle = sBrowser + ' will provide an undefined level of CSS support.';
+
+					alert(sTitle);
+				});			} );
+		</script>
+	</head>
+	<body id="xxxdt_example">
+<!--
+		<div id="xxxcontainer">
+			<div id="xxxdynamic">
+-->
+		<table cellpadding="0" cellspacing="0" border="0" class="display" id="xdtexample">
+			<thead>
+				<tr>
+					<th width="20%">Engine</th>
+					<th width="25%">Browser</th>
+					<th width="25%">Platform(s)</th>
+					<th width="15%">Version</th>
+					<th width="15%">CSS grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Engine</th>
+					<th>Browser</th>
+					<th>Platform(s)</th>
+					<th>Version</th>
+					<th>CSS grade</th>
+				</tr>
+			</tfoot>
+		</table>
+<!--
+			</div>
+		</div>
+-->
+	</body>
+</html>

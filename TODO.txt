@@ -1,0 +1,49 @@
+prindot TODOs / Weiterentwicklungen:
+
+TODOS:
+- Auftragsdefinition und calcstrand: im Modus Groove Spurabstands-Array als CSV (fragen s.u.)
+- weitere Log-Meldungen schreiben
+- Fehlermeldungen aus Log als Alert !? (seit start der Anwendung bzw. letztem angezeigten Log-Error)
+- Log immer refreshen und Fehler als Alerts darstellen, wenn seit dem Start bzw. letzten Fehlers neue hinzugekommen sind (JID)
+- nicht alert selber darstellen (bei fehler), sondern nur, wenn in log etwas auftaucht (und zwar die letzte ID merken in cookie)
+- calcstrand: breiten-berechnung vom Zylinder ist bei Mode Groove nicht so einfach, da ja repetierendes CSV-Array ! (s.u.)
+- Log/Meldungen Tab : auto-update + auto-scroller AN / AUS
+- rastername im job speichern
+- fehler: bilder, die keine sind, koennen nicht wieder geloescht werden (da ja nicht selected_file gesetzt ...)
+- mysql_real_escape_string benutzen (s. logs.php ... 'description')
+... startjob als php-file! (ziel: damit alles auch einmal ohne GUI funktioniert)
+- schon beim anlegen/speichern eines Jobs die entsprechenden Strand/Xml-Daten erzeugen ... und nur, wenn dieses ohne Fehler funktioniert hat, den Job auch zur Produktion abieten (kein Fehler, bzw. alle benötigten Daten liegen bereit)
+- Unterschied/Status Admin/User besser darstellen/visualisieren (anderes Theme oder Text in Header oder ...)
+- config.inc.php: liste mit IPs, die als Admin laufen (damit einfaches Terminal an der Maschine fuktioniert und nicht der dämliche LinuxBrowser herhalten muss)
+- nicht beim speichern eines jobs diesen mit der Maschine verbinden - sondern beim Starten (admin) mit der aktuellen Maschine verbinden ?...
+- markiere aktuell mit maschine verknuepften job in der adminjobtable mit einer anderen farbe
+- ausgewähltes Bild auf Zylinderumfang und -breite x/y-fach repetieren
+- Auftragsdefinition: Bildbreite UND Höhe? aus Bild übernehmen in Zylinder Parameter
+- Auftragsdefinition: Näpfchen Anzahl oder Abstand aus gewähltem Bild übernehmen
+- Auftragsdefinition: Spuren Anzahl oder Abstand aus gewähltem Bild übernehmen
+- Auftragsdefinition: wenn Werte passen, dann effektive Größe und Auflösung anzeigen (dpi/lpc)
+- calcstrand: statt drehen/spiegeln ..: bild nur anders auslesen (zeilen/spalten links/rechts)
+- calcstrand: progress mit jeweils -1, -2, -3 etc. ausgeben für drehen, spiegeln, skalieren etc
+- unklar: Maschine: Motorgeschwindigkeit, Stichelfrequenz, Eintauchtiefe, Naepfchengroesse
+- Rasterdefinitionsdatei erweitern (JSON format)
+- Auftragsdefinition: Warnung anzeigen, falls Bild in Breite beschnitten wuerde (im Umfang/Höhe wird derzeit nicht von calcstrand durchgelassen ... fehler)
+- Maschinentab: Anzeige von weiteren Maschinen-Infos (z.B. Kopfpositionen) als title=""
+- filter je spalte in datatables (jobs + logs)
+- I18N, L10N
+- Button tab_machines: Maschinendaten neu laden
+- Datenbank-Eintraege mit "deleted"-flag, damit nicht mehr angezeigt/ausgewertet werden (aber immer noch in datenbank drin sind) [status-flag hierfür missbrauchen ... status=-99 : deleted]
+- Maschinen-Tab (neue Maschinen ohne Namen mit MID vorbelegen - ggf. auch weitere default-werte ?!)
+- Maschinen-Tab MID hinter Maschinennamen anzeigen (statischer Text)
+- Bilder: schon bei upload type checken (colorspace, gray, aufloesung etc), und ggf. nicht verwendbar machen
+- Developer-Tab : Log-Level AN/AUS-Button
+- Strands-Verzeichnis aufraeumen (leeren)
+- unklar: modus groove ... csv-array fuer breiten in zusammenhang mit kopfpositionen
+- unklar: wie soll ein Bild auf unterschiedliche Breite im Modus Groove (CSV) reagieren (Spalten immer ? 1:1 aufteilen???) - ggf. Schalter in Oberfläche !?
+- Auftrags-Liste (Tab datatables): aktuellen Job farblich markieren (es kann nur einen geben ?!)
+- auch PDF als Input zulassen (per ImageMagick konvertieren in calcstrand.php und zwar fuer Zielauflösung) vorher nur ein kleines Preview/Thumbnail
+- ebenso weitere Bilddaten zulassen/konvertieren ...
+
+DISCUSS:
+- strangdaten mit mode gravure und groove vermischen
+- einfache bild-verarbeitung (mehrere Bilder auf zylinder posítionieren; je bild: rotation, offset x/y, scale x/y)
+- benutzer-verwaltung (gruppen/rechte)

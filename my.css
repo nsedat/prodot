@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/*
+ *
+ */
+
+#button-sendjob {
+	padding: 2em 3em;
+	text-decoration: none;
+}
+
+#button-updatemachinedata {
+	padding: 2em 3em;
+	text-decoration: none;
+}
+
+.submit {
+	padding: 2em 3em;
+	text-decoration: none;
+}
+
+.toggler {
+	/*				width: 300px;
+					height: 300px;*/
+	width: 100%;
+	height: 100%;
+}
+
+#button-switchuser {
+	padding: .5em 1em;
+	text-decoration: none;
+}
+
+.mybutton {
+	padding: .5em 1em;
+	text-decoration: none;
+}
+
+#button-showmessagebox {
+	padding: 1em 1em;
+	text-decoration: none;
+}
+
+#effect {
+	width: 240px;
+	height: 135px;
+	padding: 0.4em;
+	position: relative;
+}
+
+#effect h3 {
+	margin: 0;
+	padding: 0.4em;
+	text-align: center;
+}
+
+.description {
+	width: 500px;
+	height: 80px;
+}
+
+.fileTreeSelect {
+	width: 226px;
+	height: 430px;
+	border-top: solid 1px #BBB;
+	border-left: solid 1px #BBB;
+	border-bottom: solid 1px #FFF;
+	border-right: solid 1px #FFF;
+/*	background: #DDD;*/
+	overflow: scroll;
+	padding: 5px;
+}
+
+#logoimage {
+	display: table;
+	width: 100%;
+	height: 480px;
+}
+
+/* alertify overrides ... test! */
+.alertify-logs {
+	position: fixed;
+	z-index: 5000;
+	bottom: 10px;
+	right: 10px;
+	width: 700px;
+}
+
+textarea {
+	resize: vertical;
+}
+
+/* disable resizing of prindot_machine_name textarea ... */
+#prindot_machine_comment {
+	resize: none;
+}
+
+/* align fieldsets left to right - instead of top to bottom */
+fieldset {
+	border: 1px solid;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	/*width: 200px;*/
+	width: auto;
+	/*float: left;*/
+	margin: 4px;
+}
+
+form.formular, .validationEngineContainer {
+	font-family: tahoma, verdana, "sans-serif";
+	font-size: 12px;
+	padding: 20px;
+	border: 1px solid #A5A8B8;
+	/*width: 640px;*/
+	width: auto;
+	/*margin: 0 auto;*/
+	margin: 4px;
+	/*height: 600px;*/
+}
+
+form.formular, .validationEngineContainer {
+	font-size: 1em;
+	padding: 0px;
+	border: 0px;
+	width: auto;
+	margin: 0px;
+}
+
+.formular .text-input {
+	width: 180px;
+/*	background: white;*/
+}
+
+input[disabled] {
+/*	font-size: .8em;*/
+/*	background: #ececec;*/
+}
+
+/* thumbnail view */
+p.thumbnail {
+	display: block;
+	height: 245px;
+	width: 245px;
+}
+
+img.thumbnail {
+	border: 1px solid #ff6666;
+	padding: 2px;
+	width: 100%;
+}
+
+.redwideborder {
+	border: 4px red solid
+}
+.redthinborder {
+	border: 1px red solid
+}
+
+table#jobtable td th {
+	padding: 0px;
+	border-collapse: collapse;	/* separate */
+	border-spacing: 0px;
+}
+
+table#logtable td th {
+	padding: 0px;
+	border-collapse: collapse;	/* separate */
+	border-spacing: 0px;
+}
+
+table#logtable {
+      margin: 0 auto;
+      width: 100%;
+      clear: both;
+      border-collapse: collapse;
+/*      table-layout: fixed;*/
+      word-wrap: normal;
+}
+
+
+.ui-progressbar {
+	position: relative;
+}
+.progress-label {
+	position: absolute;
+	left: 10%;
+	top: 4px;
+	font-weight: bold;
+/*	text-shadow: 1px 1px 0 #fff;
+*/}
+
+	/* alertify logs with bigger font size ... */
+.alertify-log {
+	font-family: sans-serif;
+	font-size: 1.5em;
+}

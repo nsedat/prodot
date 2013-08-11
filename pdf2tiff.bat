@@ -1,0 +1,1 @@
+convert -depth 8 -density 1270x1270 "test Camel.pdf" -colorspace Gray -depth 8 -density 1270x1270 x.tif
