@@ -88,6 +88,12 @@ loadjs('./plupload2/js/jquery.ui.plupload/jquery.ui.plupload.js');
 loadjs('./plupload2/js/i18n/de.js');
 loadcss('./plupload2/js/jquery.ui.plupload/css/jquery.ui.plupload.css');
 
+loadjs('./jquery.fineuploader-3.7.1.js');
+loadcss('./fineuploader-3.7.1.css');
+loadcss('./custom.css');
+
+
+
 loadjs('./jCanvas/jcanvas.js');
 
 loadjs('./alertify/lib/alertify.js');
@@ -418,7 +424,7 @@ $(function () {
 		// fetch alerts from outside
 		window.alert = function () {
 			// do something here
-			writelog(0, 0, 0, LOG_TYPE_WARNING, LOG_SUBTYPE_APPLICATION, "catched foreign alert: " + arguments[0]);
+			writelog(0, 0, 0, LOG_TYPE_WARNING, LOG_SUBTYPE_APPLICATION, "Alermmeldung abgefangen: " + arguments[0]);
 			alertify.log("catched foreign alert: " + arguments[0]);
 			//return proxied.apply(this, arguments);
 			return false;
@@ -485,7 +491,7 @@ function getimageinfo(filename) {
 			//$("#job_settings").hide("slide", {}, 600);
 			$("#settings_form").show();
 			$("#tabs").tabs("enable", 3);
-			$("#tabs").tabs("option", "active", 3);
+//			$("#tabs").tabs("option", "active", 3);
 		}
 		else {
 			// TODO log und selectedfile ungueltig und tabs sperren
@@ -2339,7 +2345,7 @@ function plupload_log() {
 
 // Convert divs to queue widgets when the DOM is ready
 $(function () {
-	$("#uploader").plupload({
+	$("#xuploader").plupload({
 		// General settings
 		runtimes: 'html5',
 		url: phpconfig['urls']['plupload_uploader'],
@@ -2431,7 +2437,7 @@ $(function () {
 
 	});
 	// Client side form validation
-	$('form').submit(function (e) {
+	$('xform').submit(function (e) {
 		var uploader = $('#uploader').plupload('getUploader');
 		// Files in queue upload them first
 		if (uploader.files.length > 0) {
@@ -2450,6 +2456,150 @@ $(function () {
 		return false;
 	});
 });
+
+
+$(function () {
+
+			var fuuploader = $('#fu').fineUploader({
+				request: {
+					endpoint: phpconfig['urls']['fineupload_uploader']
+				},
+				retry: {
+					enableAuto: true,
+					maxAutoAttempts: 9,
+					autoAttemptDelay: 10
+				},
+				chunking: {
+					enabled: true,
+					partSize: 10485760	// 10MB
+				},
+				autoUpload: true,
+				multiple: false,
+				validation: {
+					itemLimit: 1
+				},
+				resume: {
+					enabled: false
+				},
+
+        text: {
+			uploadButton: '<div class="uploadButtonText"><i class="icon-plus icon-white"></i>Dateien auswählen oder hierhin ziehen</div>',
+            cancelButton: 'Abbrechen',
+            retryButton: 'Wiederholen',
+            deleteButton: 'Löschen',
+            failUpload: 'fehlgeschlagen',
+            dragZone: 'Dateien hierhin ziehen und loslassen zum hochladen',
+            dropProcessing: 'Verarbeite Dateien ...',
+            formatProgress: "{percent}% von {total_size}",
+            waitingForResponse: "verarbeite ... bitte warten ..."
+        },
+
+        messages: {
+        	typeError: '{file} has an invalid extension. Valid extension(s): {extensions}.',
+        	sizeError: '{file} is too large, maximum file size is {sizeLimit}.',
+        	minSizeError: '{file} is too small, minimum file size is {minSizeLimit}.',
+        	emptyError: '{file} is empty, please select files again without it.',
+        	noFilesError: 'No files to upload.',
+        	onLeave: 'The files are being uploaded, if you leave now the upload will be cancelled.',
+        	unsupportedBrowser: 'Unrecoverable error - this browser does not permit file uploading of any kind.',
+//            tooManyItemsError: 'Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.',
+            tooManyItemsError: 'Zu viele Dateien ({netItems}) ausgewählt. Maximal sind {itemLimit} erlaubt.',
+            retryFailTooManyItems: "Retry failed - you have reached your file limit.",
+            onLeave: "The files are being uploaded, if you leave now the upload will be cancelled."
+		},
+
+      template: '<div class="qq-uploader">' +
+            '<div id="fuUploadDropArea" class="qq-upload-drop-area"><span>{dragZoneText}</span></div>' +
+            '<div id="fuUploadButton" class="qq-upload-button"><div>{uploadButtonText}</div></div>' +
+            '<span class="qq-drop-processing"><span>{dropProcessingText}</span><span class="qq-drop-processing-spinner"></span></span>' +
+            '<div id="upload-list">' + '<ul class="qq-upload-list"></ul>' + '</div>' +
+            '</div>',
+
+        callbacks: {
+            onSubmit: function(id, name){console.log("onSubmit id=" + id + " name=" + name);},
+            onComplete: function(id, name, response){console.log("onSubmit id=" + id + " name=" + name);}
+		},
+
+//		dragAndDrop: {
+//			extraDropzones: [$('#fudropzone')]
+//		},
+
+				debug: false	// prints on javascript console for debugging only
+			});
+
+			$('#fu').on('complete', function(event, id, name, response) {
+//$('#fuUploadDropArea').show();
+				console.log("completed ... hide and reset in a few seconds!");
+			writelog(0, 0, 0, LOG_TYPE_INFO, LOG_SUBTYPE_IMAGE, 'File uploaded : ' + response['uploadName']);
+				alertify.log(plupload_log('Datei hochgeladen: ', response['uploadName']), "success", 10000);
+				//refreshing file trees !!
+				fileTreeSelect();
+				setTimeout(function() {
+//					$('#fu').hide('fade', '', 800, function() {fuuploader.fineUploader('reset');});
+					$('#upload-list').hide('fade', '', 800, function() {$('#fuUploadButton').show('fade', 800, function() {fuuploader.fineUploader('reset');});});
+//					fuuploader.fineUploader('reset');
+//					$('#fu').show(0);
+					},3000);
+			});
+			$('#fu').on('submit', function(event, id, name, response) {
+$('#fuUploadButton').hide();
+//				alertify.log('[submit] ' + name);
+				console.log("submit ...");
+//					fuuploader.fineUploader('reset');
+//				$('#upload-list').hide('fade', '', 800, function() {;});
+			});
+			$('#fu').on('submitted', function(event, id, name, response) {
+				alertify.log('wird hochgeladen: ' + name);
+				console.log("submitted ...");
+//					fuuploader.fineUploader('reset');
+//				$('#upload-list').hide('fade', '', 800, function() {;});
+//$('#fuUploadDropArea').hide();
+//$('#fuUploadButton').hide('fade', '', 800);
+			});
+
+			$('#fu').on('autoretry', function(event, id, name, response) {
+				console.log("autoretry ...");
+//					fuuploader.fineUploader('reset');
+//				$('#upload-list').hide('fade', '', 800, function() {;});
+			});
+
+			$('#fu').on('retry', function(event, id, name, response) {
+				console.log("retry ...");
+//					fuuploader.fineUploader('reset');
+//				$('#upload-list').hide('fade', '', 800, function() {;});
+			});
+
+			$('#fu').on('cancel', function(event, id, name, response) {
+				$('#upload-list').hide('fade', '', 100, function() {$('#fuUploadButton').show('fade', 800, function() {fuuploader.fineUploader('reset');});});
+				console.log("cancel ...");
+				alertify.log('hochladen abgebrochen: ' + name);
+//					fuuploader.fineUploader('reset');
+//				$('#upload-list').hide('fade', '', 800, function() {;});
+			});
+
+			$('#fu').on('error', function(event, id, name, response) {
+				console.log("error ...");
+			writelog(0, 0, 0, LOG_TYPE_ERROR, LOG_SUBTYPE_IMAGE, 'Error while ile uploading : ' + filename);
+				alertify.error('Fehler beim hochladen ' + name);
+//					fuuploader.fineUploader('reset');
+//				$('#upload-list').hide('fade', '', 800, function() {;});
+			});
+
+			$('#fu').on('uploadchunk', function(event, id, name, response) {
+				console.log("uploadchunk ...");
+//					fuuploader.fineUploader('reset');
+//				$('#upload-list').hide('fade', '', 800, function() {;});
+			});
+
+			$('#removeUpload').click(function() {
+				console.log("click");
+				fuuploader.fineUploader('reset');
+			});
+
+			// TODO: delete *.partial file on error ... (send event to php ??? )
+});
+
+
 
 
 //////////////////////////////////////////////////

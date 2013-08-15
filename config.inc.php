@@ -10,7 +10,7 @@
 //$_SESSION['sid'] = $SID;
 
 /* configuration for prindot php files (eg. database) */
-$prindot['info']['version'] = '1.35 [2013-07-28]';
+$prindot['info']['version'] = '1.40 [2013-08-15]';
 
 //$prindot = array();
 $prindot['database']['type'] = 'mysql';	// TODO: try mysqlnd (what with the shitty linux compiled php versions ?? (check!)
@@ -40,6 +40,7 @@ $prindot['paths']['storage_root_js'] = './uploads/';
 /* script for filetree */
 $prindot['urls']['filetreescript'] = './jqueryFileTree/connectors/jqueryFileTree.php';
 $prindot['urls']['plupload_uploader'] = './upload.php';
+$prindot['urls']['fineupload_uploader'] = './fuuploader.php';
 
 $prindot['fileextensions']['imageinfo'] = '.nfo';
 $prindot['filemask']['strand'] = 'JID%08d';

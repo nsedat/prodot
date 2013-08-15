@@ -1,6 +1,7 @@
 prindot TODOs / Weiterentwicklungen:
 
 TODOS:
+- logging aufraeumen (nur wichtige aktionen oder fehler, auch ggf. uploads loggen)
 - Auftragsdefinition und calcstrand: im Modus Groove Spurabstands-Array als CSV (fragen s.u.)
 - weitere Log-Meldungen schreiben
 - Fehlermeldungen aus Log als Alert !? (seit start der Anwendung bzw. letztem angezeigten Log-Error)

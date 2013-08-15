@@ -25,7 +25,7 @@ function storage($REQUEST) {
 		$targetDir = $prindot['paths']['storage_root_js'];
 		$fileName = isset($_REQUEST["filename"]) ? $_REQUEST["filename"] : '*';
 // Clean the fileName for security reasons
-		$fileName = preg_replace('/[^\w\._]+/', '_', $fileName);
+//		$fileName = preg_replace('/[^\w\._]+/', '_', $fileName);
 
 		$dir = $_SERVER["SCRIPT_FILENAME"];
 		error_log($_SERVER["SCRIPT_NAME"] . " : " . "dir '" . $dir . "'");

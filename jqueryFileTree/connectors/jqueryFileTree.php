@@ -38,7 +38,7 @@ if( file_exists($root . $_POST['dir']) ) {
 					&& $file != '..'
 					&& is_dir($root . $_POST['dir'] . $file) )
 			{
-				if ($file != "previews" && $file != "thumbnails" && $file != "tmp" && $file != "strands")
+				if ($file != "previews" && $file != "thumbnails" && $file != "tmp" && $file != "strands" && $file != "chunks")
 // TODO: filter dynamically with config paths!
 				{
 				//echo "<li class=\"directory collapsed\"><a href=\"#\" rel=\"" . htmlentities($_POST['dir'] . $file) . "/\">" . htmlentities($file) . "</a></li>";
@@ -53,6 +53,10 @@ if( file_exists($root . $_POST['dir']) ) {
 // TODO: filter dynamically with config extensions!
                 $pp = pathinfo($file);
                 if ($pp['extension'] == 'nfo')
+                {
+                    continue;
+                }
+                if ($pp['extension'] == 'gitignore')
                 {
                     continue;
                 }
